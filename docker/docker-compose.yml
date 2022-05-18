@@ -1,0 +1,39 @@
+version: '3.0'
+volumes:
+  dbdata-sportverein:
+    external: false
+services:
+  web-sportverein:
+    build: ./web
+    container_name: web-sportverein
+    ports:
+      - "8080:80"
+    volumes:
+      - ../src:/var/www/html
+      - ../config:/var/www/config
+    links:
+      - "db-sportverein:database"
+  db-sportverein:
+    image: mariadb
+    container_name: db-sportverein
+    environment:
+      MYSQL_ROOT_PASSWORD: Geheim01
+      MYSQL_DATABASE: 2021sportverein
+      MYSQL_USER: sportverein
+      MYSQL_PASSWORD: sportverein
+    ports:
+      - "3406:3306"
+    volumes:
+      - dbdata-sportverein:/var/lib/mysql
+      - "./mysql/schema:/docker-entrypoint-initdb.d:rw"
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pma-sportverein
+    environment:
+      PMA_HOST: database
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    ports:
+      - "7080:80"
+    links:
+      - "db-sportverein:database"
