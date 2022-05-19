@@ -1,7 +1,7 @@
 <?php
 $pdo = new PDO('mysql:host=db-sportverein;dbname=2021sportverein', 'root', 'Geheim01');
 
-$sql = "SELECT * FROM mitglied";
+$sql = "SELECT vorname, nachname, plz, ort, geschlecht FROM mitglied";
 
 ?>
 <!DOCTYPE html>
@@ -34,12 +34,11 @@ $sql = "SELECT * FROM mitglied";
                 <tr>
                     <th>Vorname</th>
                     <th>Name</th>
-                    <th>Adresse</th>
                     <th>Postleitzahl</th>
                     <th>Ort</th>
                     <th>Sportart</th>
                     <th>Aktionen</th>
-
+                    <th>Adresse</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,6 +47,9 @@ $sql = "SELECT * FROM mitglied";
                 echo "<tr>";
                 echo "<td>" . $row['vorname']."</td>";
                 echo "<td>" . $row['nachname']."</td>";
+                echo "<td>" . $row['plz']."</td>";
+                echo "<td>" . $row['ort']."</td>";
+                echo "<td>" . $row['geschlecht']."</td>";
                 echo "<tr>";
                 }
             ?>
