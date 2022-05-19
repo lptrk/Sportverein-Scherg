@@ -1,3 +1,8 @@
+html,
+body {
+  width: 100%;
+}
+
 .header {
   position: absolute;
   width: 321px;
@@ -40,6 +45,10 @@
   border-radius: 5px;
 }
 
+.login-form {
+  background-color: white;
+}
+
 .password {
   box-sizing: border-box;
 
@@ -71,7 +80,6 @@
   height: 24px;
   left: 157px;
   top: 430px;
-
   /* Paragraph */
   font-family: "Heebo";
   font-style: normal;
@@ -107,10 +115,13 @@
 
 .background {
   position: absolute;
-  width: 1535px;
-  height: 1024px;
-  left: -176px;
-  top: 0px;
+  width: 100%;
+  height: 100vh;
+  background-size: contain;
+  margin-left: 40%;
+  background: url("https://s3-alpha-sig.figma.com/img/3fda/0eac/11c41679a8526adb92960ac4a19efbfa?Expires=1653868800&Signature=FgSP20OYqxuDgGd~unlI0R6rEJvymJX4IpWd6ugEnmjo2ihV1u4ujkLscgpyCfOAoXyDGYMMjunHU3aKWCVHghjF8BpGCkhpn1IH-TUV0GIbDlO8WO-sEOy59ZgQ5CW5k8GFqeBFtXfd41oNb8syS1fJ6cUIFjgg4rKLq3POKKoAH7R-~OgqyJHNA4dCYJ1h9Qxv8Epsy9BCJ6AFNds3E1nPGkdeHS9jcXNPi2yVysyNqa6dd06oQEDgqbULf~B0HHGg-JYy7iOycAMaN7o0Bg9OmbSTJKP~rC99ddtVXtjLL2qfWtlOQ6eDsNKXI8ykfJMNKpCowVqLI9bbEJVn7A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA");
+}
 
-  background: url("https://img.freepik.com/fotos-kostenlos/athlet-bereit-zum-laufen-mit-bist-du-bereit-nachricht_23-2149074274.jpg?w=2000");
+.test{
+
 }
