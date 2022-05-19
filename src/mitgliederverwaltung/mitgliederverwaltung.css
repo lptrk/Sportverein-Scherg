@@ -15,26 +15,7 @@ body {
   background: #c4c4c4;
 }
 
-.mitgliederverwaltungsprogramm {
-  position: absolute;
-  width: 213px;
-  height: 21px;
-  left: 91px;
-  top: 10px;
 
-  font-family: "Heebo";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 21px;
-  /* identical to box height */
-
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.25px;
-
-  color: #000000;
-}
 
 .Nutzername {
   position: absolute;
@@ -127,6 +108,9 @@ body {
 .styled-table th,
 .styled-table td {
     padding: 12px 15px;
+    width: 187px;
+    align-content: flex-start;
+    letter-spacing: 0.5px;
 }
 
 .styled-table tbody tr {
@@ -138,9 +122,12 @@ body {
 }
 
 .styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #cc6969;
+    border-bottom: thin solid #cc6969;
 }
-
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #cc6969;
+}
 .bottom-bar {
   position: absolute;
   box-sizing: content-box;
