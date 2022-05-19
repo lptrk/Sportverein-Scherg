@@ -1,38 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600;700;800;900&display=swap");
 
-@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600;700;800;900&display=swap');
-
-
-html,body{
-    width: 100%;
+html,
+body {
+  width: 100%;
 }
 
-.top-bar{
-    position: absolute;
-width: 100%;
-height: 41px;
-left: 0px;
-top: 0px;
+.top-bar {
+  position: absolute;
+  width: 100%;
+  height: 41px;
+  left: 0px;
+  top: 0px;
 
-background: #C4C4C4;
+  background: #c4c4c4;
 }
 
-.mitgliederverwaltungsprogramm{
+.mitgliederverwaltungsprogramm {
+  position: absolute;
+  width: 213px;
+  height: 21px;
+  left: 91px;
+  top: 10px;
+
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  /* identical to box height */
+
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.25px;
+
+  color: #000000;
+}
+
+.Nutzername {
+  position: absolute;
+  width: fit-content;
+  height: 19px;
+  left: 1211px;
+  top: 11px;
+
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+
+  color: #000000;
+}
+
+.ueberschrift {
+  position: absolute;
+  width: 393px;
+  height: 30px;
+  left: 88px;
+  top: 101px;
+
+  font-family: "Heebo";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 44px;
+  display: flex;
+  align-items: center;
+
+  color: #000000;
+}
+
+.strich {
+  position: absolute;
+  width: 173px;
+  height: 0px;
+  left: 88px;
+  top: 141px;
+
+  border: 2px solid #cc6969;
+}
+
+.mitglied-hinzufuegen {
+  position: absolute;
+  width: 196px;
+  height: 38px;
+  left: 92px;
+  top: 181px;
+  color: white;
+  border: none;
+  background: #cc6969;
+}
+.hinzufuegen-button {
+  text-decoration: none;
+  color: white;
+  font-family: "Heebo";
+}
+
+.Freitextsuche {
+  position: absolute;
+  width: 177px;
+  height: 39px;
+  left: 1169px;
+  top: 181px;
+
+  background: #ffffff;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+.styled-table {
     position: absolute;
-width: 213px;
-height: 21px;
-left: 91px;
-top: 10px;
+    top: 24vh;
+    left: 92px;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+.styled-table thead tr {
+    background-color: #cc6969;
+    color: #ffffff;
+    text-align: left;
+}
 
-font-family: 'Heebo';
-font-style: normal;
-font-weight: 500;
-font-size: 14px;
-line-height: 21px;
-/* identical to box height */
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
 
-display: flex;
-align-items: center;
-letter-spacing: 0.25px;
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
 
-color: #000000;
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #cc6969;
+}
+
+.bottom-bar {
+  position: absolute;
+  box-sizing: content-box;
+  width: 100%;
+  height: 4vh;
+  left: 0px;
+  top: 96vh;
+  background: #cc6969;
+  text-align: center;
+}
+
+.bottom-text {
+  justify-content: center;
+  padding-top: 0.6rem;
+  font-family: "Heebo";
+  color: white;
 }
