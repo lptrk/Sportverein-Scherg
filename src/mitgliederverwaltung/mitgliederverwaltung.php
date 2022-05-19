@@ -1,3 +1,9 @@
+<?php
+$pdo = new PDO('mysql:host=db-sportverein;dbname=2021sportverein', 'root', 'Geheim01');
+
+$sql = "SELECT * FROM mitglied";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,26 +43,14 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Muster</td>
-                    <td>Muster</td>
-                    <td>Muster</td>
-                    <td>Muster</td>
-                    <td>Muster</td>
-                    <td>Muster</td>
-                    <td>Muster</td>
-
-                </tr>
-                <tr class="active-row">
-                    <td>Muster</td>
-                    <td>Muster</td>
-                    <td>Muster</td>
-                    <td>Muster</td>
-                    <td>Muster</td>
-                    <td>Muster</td>
-                    <td>Muster</td>
-                </tr>
-
+            <?php
+                foreach ($pdo->query($sql) as $row) {
+                echo "<tr>";
+                echo "<td>" . $row['vorname']."</td>";
+                echo "<td>" . $row['nachname']."</td>";
+                echo "<tr>";
+                }
+            ?>
             </tbody>
         </table>
     </div>
