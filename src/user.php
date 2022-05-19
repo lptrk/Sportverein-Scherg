@@ -11,11 +11,9 @@ $dbh = new PDO('mysql:host=db-sportverein;dbname=2021sportverein', 'sportverein'
 class user{
     private $username;
     private $password;
-    public $dbh;
 
-    function __construct($username, $dbh){
+    function __construct($username){
         $this->username = $username;
-        $this->dbh = $dbh;
     }
 
     function getPassword(){
@@ -27,6 +25,8 @@ class user{
     }
 
     public function user_exist($username){
+        $dbh = new PDO('mysql:host=db-sportverein;dbname=2021sportverein', 'sportverein', 'sportverein');
+       
         $sql = "SELECT id FROM user WHERE username = '".$username."';";
         $ergebnis = $dbh->query($sql);
 

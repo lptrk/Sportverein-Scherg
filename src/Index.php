@@ -1,6 +1,6 @@
 <?php
 /*
-$dbh = new PDO('mysql:host=127.0.0.1;port=3406;dbname=2021portverein', 'sportverein', 'sportverein');
+$dbh = new PDO('mysql:host=127.0.0.1;port=3406;dbname=2021sportverein', 'sportverein', 'sportverein');
 // hier die Verbindung nutzen
 $sth = $dbh->query('SELECT * FROM mitglied');
 */
