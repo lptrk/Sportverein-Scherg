@@ -1,9 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600;700;800;900&display=swap");
 
-html,
-body {
-  width: 100%;
-}
 
 .top-bar {
   position: absolute;
@@ -75,22 +71,26 @@ body {
   text-decoration: none;
   color: white;
   font-family: "Heebo";
+  margin-bottom: 30px;
 }
 
 .Freitextsuche {
+  box-sizing: border-box;
+
   position: absolute;
   width: 177px;
   height: 39px;
   left: 1169px;
   top: 181px;
-
-  background: #ffffff;
+  
+  background: #FFFFFF;
   border: 1px solid #000000;
   border-radius: 5px;
+
 }
 .styled-table {
     position: absolute;
-    top: 24vh;
+    top: 27%;
     left: 92px;
     border-collapse: collapse;
     margin: 25px 0;
