@@ -6,55 +6,87 @@ $sql = "SELECT vorname, nachname, plz, ort, geschlecht FROM mitglied";
 ?>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/mitgliederverwaltung/mitgliederverwaltung.css" />
-    <title>Mitgliederverwaltung</title>
-  </head>
-  <body>
-    <div class="top-bar">
-      <section class="Nutzername">Name des Benutzers</section>
-    </div>
 
-    <div class="ueberschrift">MITGLIEDERVERWALTUNG</div>
-      <button class="mitglied-hinzufuegen">
-        <a class="hinzufuegen-button" href="">+ Mitglied hinzufügen</a>
-      </button>
-      <input type="text" class="Freitextsuche" placeholder="Freitextsuche">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/mitgliederverwaltung/mitgliederverwaltung.css" />
+  <title>Mitgliederverwaltung</title>
+</head>
+
+<body>
+  <div class="top-bar">
+    <section class="Nutzername">Name des Benutzers</section>
+  </div>
+
+  <div class="ueberschrift">MITGLIEDERVERWALTUNG</div>
+  <button class="mitglied-hinzufuegen">
+    <a class="hinzufuegen-button" href="">+ Mitglied hinzufügen</a>
+  </button>
+  <input type="text" class="Freitextsuche" placeholder="Freitextsuche">
+  </div>
+  <section class="strich"></section>
+  <div class="bottom-bar">
+    <section class="bottom-text">Sportverein © 2022</section>
+  </div>
+  <div class="table-div">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Vorname</th>
+          <th>Name</th>
+          <th>Postleitzahl</th>
+          <th>Ort</th>
+          <th>Sportart</th>
+          <th>Aktionen</th>
+          <th>Adresse</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+        foreach ($pdo->query($sql) as $row) {
+          echo "<tr>";
+          echo "<td>" . $row['vorname'] . "</td>";
+          echo "<td>" . $row['nachname'] . "</td>";
+          echo "<td>" . $row['plz'] . "</td>";
+          echo "<td>" . $row['ort'] . "</td>";
+          echo "<td>" . $row['geschlecht'] . "</td>";
+          echo "<tr>";
+        }
+        ?>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- PopUp Windows -->
+
+  <div class="edit-div">
+    <div class="edit-header">
+      MITGLIED HINZUFÜGEN
     </div>
-    <section class="strich"></section>
-    <div class="bottom-bar">
-      <section class="bottom-text">Sportverein © 2022</section>
-    </div>
-    <div class="table-div">
-        <table class="styled-table">
-            <thead>
-                <tr>
-                    <th>Vorname</th>
-                    <th>Name</th>
-                    <th>Postleitzahl</th>
-                    <th>Ort</th>
-                    <th>Sportart</th>
-                    <th>Aktionen</th>
-                    <th>Adresse</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php
-                foreach ($pdo->query($sql) as $row) {
-                echo "<tr>";
-                echo "<td>" . $row['vorname']."</td>";
-                echo "<td>" . $row['nachname']."</td>";
-                echo "<td>" . $row['plz']."</td>";
-                echo "<td>" . $row['ort']."</td>";
-                echo "<td>" . $row['geschlecht']."</td>";
-                echo "<tr>";
-                }
-            ?>
-            </tbody>
-        </table>
-    </div>
-  </body>
+    <section class="edit-underline"></section>
+    <label for="name" class="name-label">Vorname*</label>
+    <input type="text" id="name">
+    <label for="lastname" class="lastname-label">Nachname*</label>
+    <input type="text" id="lastname">
+    <label for="plz" class="plz-label">PLZ*</label>
+    <input type="text" id="plz">
+    <label for="ort" class="ort-label">Ort*</label>
+    <input type="text" id="ort">
+    <label for="geschlecht" class="geschlecht-label">Geschlecht*</label>
+    <select id="geschlecht">
+      <option value="male">Männlich</option>
+      <option value="female">Weiblich</option>
+    </select>
+    <label for="sportarten" class="sportarten-label">Sportarten*</label>
+    <select name="sportarten" id="sportarten">
+      <option value="">Sportart auswählen</option>
+    </select>
+    <div class="add-member"><a href="" class="add-text">HINZUFÜGEN</a></div> </a>
+  </div>
+
+
+</body>
+
 </html>
