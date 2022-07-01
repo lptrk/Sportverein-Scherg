@@ -16,7 +16,6 @@
   height: 19px;
   left: 1211px;
   top: 11px;
-
   font-family: "Heebo";
   font-style: normal;
   font-weight: 500;
@@ -24,7 +23,17 @@
   line-height: 21px;
 
   color: #000000;
+
 }
+
+.logout svg{
+  align-items: center;
+  position: absolute;
+  margin-left: 1340px;
+  margin-top: 9px;
+
+}
+
 
 .ueberschrift {
   position: absolute;
@@ -104,9 +113,13 @@
 .styled-table th,
 .styled-table td {
   padding: 12px 15px;
-  width: 187px;
+  width: 149.5px;
   align-content: flex-start;
   letter-spacing: 0.5px;
+}
+
+.table-aktionen{
+  width: 10px;
 }
 
 .styled-table tbody tr {

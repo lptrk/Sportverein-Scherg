@@ -1,6 +1,12 @@
 <?php
 $pdo = new PDO('mysql:host=db-sportverein;dbname=2021sportverein', 'root', 'Geheim01');
 
+$pencilIcon = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
+</svg>';
+$deleteIcon='<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+  <path d="M19,4L15.5,4L14.5,3L9.5,3L8.5,4L5,4L5,6L19,6M6,19C6,20.097 6.903,21 8,21L16,21C17.097,21 18,20.097 18,19L18,7L6,7L6,19Z" style="fill:rgb(255,0,0);fill-rule:nonzero;"/>
+</svg>';
+
 $sql = "SELECT vorname, nachname, plz, ort, geschlecht FROM mitglied";
 
 ?>
@@ -17,7 +23,14 @@ $sql = "SELECT vorname, nachname, plz, ort, geschlecht FROM mitglied";
 
 <body>
   <div class="top-bar">
-    <section class="Nutzername">Name des Benutzers</section>
+    <section class="Nutzername">Name des Benutzers       <a href=""></section>
+    <section class="logout"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+    <path d="M14.08,15.59L16.67,13L7,13L7,11L16.67,11L14.08,8.41L15.5,7L20.5,12L15.5,17L14.08,15.59M19,3C20.097,3 21,3.903 21,5L21,9.67L19,7.67L19,5L5,5L5,19L19,19L19,16.33L21,14.33L21,19C21,20.097 20.097,21 19,21L5,21C3.89,21 3,20.1 3,19L3,5C3,3.89 3.89,3 5,3L19,3Z" style="fill:url(#_Linear1);fill-rule:nonzero;"/>
+    <defs>
+        <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(18,0,0,18,3,12)"><stop offset="0" style="stop-color:rgb(88,88,88);stop-opacity:1"/><stop offset="0.47" style="stop-color:rgb(119,84,84);stop-opacity:1"/><stop offset="1" style="stop-color:rgb(201,74,74);stop-opacity:1"/></linearGradient>
+    </defs>
+</svg>
+    </a></section>
   </div>
 
   <div class="ueberschrift">MITGLIEDERVERWALTUNG</div>
@@ -38,9 +51,9 @@ $sql = "SELECT vorname, nachname, plz, ort, geschlecht FROM mitglied";
           <th>Name</th>
           <th>Postleitzahl</th>
           <th>Ort</th>
+          <th>Gechlecht</th>
           <th>Sportart</th>
-          <th>Aktionen</th>
-          <th>Adresse</th>
+          <th class="table-aktionen">Aktionen</th>
         </tr>
       </thead>
       <tbody>
@@ -52,6 +65,8 @@ $sql = "SELECT vorname, nachname, plz, ort, geschlecht FROM mitglied";
           echo "<td>" . $row['plz'] . "</td>";
           echo "<td>" . $row['ort'] . "</td>";
           echo "<td>" . $row['geschlecht'] . "</td>";
+          echo "<td>" . $row['geschlecht'] . "</td>";
+          echo "<td> <a href=''> " . $pencilIcon . $deleteIcon . "<a/> </td>";
           echo "<tr>";
         }
         ?>
