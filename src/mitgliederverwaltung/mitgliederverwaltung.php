@@ -9,6 +9,8 @@ $deleteIcon = '<svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xml
 
 $sql = "SELECT vorname, nachname, plz, ort, geschlecht FROM mitglied";
 
+$name = $_SESSION['name'];
+echo $name;
 ?>
 <!DOCTYPE html>
 <html lang="en">

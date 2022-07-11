@@ -1,12 +1,7 @@
 <?php
 
-$dbh = new PDO('mysql:host=db-sportverein;dbname=2021sportverein', 'sportverein', 'sportverein');
-/* $db = mysqli_connect(
-    "127.0.0.1",
-    "sportverein",
-    "sportverein",
-    "2021sportverein"    
-);*/
+$dbh = new PDO('mysql:host=db-sportverein;dbname=2021sportverein', 'root', 'Geheim01');
+$sql = "SELECT name, password FROM user";
 
 class user{
     private $username;
@@ -17,29 +12,26 @@ class user{
     }
 
     function getPassword(){
+
+        $sql = "SELECT password FROM user";
         return $this->password;
     }
 
-    function setPassword(){ //add sql injec
-
-    }
-
-    public function user_exist($username){
-        $dbh = new PDO('mysql:host=db-sportverein;dbname=2021sportverein', 'sportverein', 'sportverein');
-       
-        $sql = "SELECT id FROM user WHERE username = '".$username."';";
+    public function user_exists($username){
+        //Datenbankverbindung aufbauen und SQL statement -> ergebnis in variable speichern
+        $dbh = new PDO('mysql:host=db-sportverein;dbname=2021sportverein', 'root', 'Geheim01');
+        $sql = "SELECT id FROM user WHERE name = '".$username."'";
         $ergebnis = $dbh->query($sql);
 
-        if($ergebnis == true){
+        if($ergebnis != NULL){
             echo "erfolg";
-        }
-        else{
+        } else{
             echo "fehler";
         }
     }
 }
 
-$user = new user("sportverein");
-$user->user_exist("sportverein");
+$user = new user("Maxuster");
+$user->user_exists("Maxuster");
 
 ?>

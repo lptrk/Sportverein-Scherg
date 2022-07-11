@@ -1,3 +1,21 @@
+<?php
+    session_start();
+    //Hier nur mal eben einen Benutzer in die Datenbank geshitfixed (später code hier löschen?)
+
+/*    $name = 'Mustermann';
+    $password = 'geheim';
+    include "../classes/dbh.classes.php";
+    include "../classes/login.classes.php";
+    include "../classes/login-contr.classes.php";
+    $test = new loginContr($name, $password);
+    $test->hashPassword($name, $password);*/
+
+    //Nur Zum testen
+    if(isset($_SESSION["username"])){
+        echo "YESauhfwawhfoajwfaf";
+    }
+    var_dump($_POST);
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,12 +32,12 @@
     <div class="header">SPORTVEREIN</div>
     <div class="line"></div>
     <div class="login-form">
-      <form action="" method="post">
+      <form action="login.php" method="post">
         <label class="label-username" for="username">Benutzername</label>
         <input class="username" type="text" name="username" />
         <label class="label-password" for="password">Passwort</label>
         <input class="password" type="password" name="password" />
-        <input class="submit" type="submit" placeholder="LOGIN" />
+        <input class="submit" type="submit" name="submit" placeholder="LOGIN" />
       </form>
     </div>
    
