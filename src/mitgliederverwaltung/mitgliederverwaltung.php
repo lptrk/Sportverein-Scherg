@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if(!isset($_SESSION["loggedin"])){
+  header("location: ../login/loginseite.php?error=not_logged_in");
+}
+
 $pdo = new PDO('mysql:host=db-sportverein;dbname=2021sportverein', 'root', 'Geheim01');
 
 $pencilIcon = '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24"><path d="M20.71,7.04C21.1,6.65 21.1,6 20.71,5.63L18.37,3.29C18,2.9 17.35,2.9 16.96,3.29L15.12,5.12L18.87,8.87M3,17.25V21H6.75L17.81,9.93L14.06,6.18L3,17.25Z" />
@@ -27,7 +33,7 @@ echo $name;
   <div class="container-div">
 
     <div class="top-bar">
-      <section class="Nutzername" id="nutzername">Name des Benutzers <a href="#"></section>
+      <section class="Nutzername" id="nutzername"><?php echo $_SESSION["name"]; ?> <a href="#"></section>
       <section class="logout"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
           <path d="M14.08,15.59L16.67,13L7,13L7,11L16.67,11L14.08,8.41L15.5,7L20.5,12L15.5,17L14.08,15.59M19,3C20.097,3 21,3.903 21,5L21,9.67L19,7.67L19,5L5,5L5,19L19,19L19,16.33L21,14.33L21,19C21,20.097 20.097,21 19,21L5,21C3.89,21 3,20.1 3,19L3,5C3,3.89 3.89,3 5,3L19,3Z" style="fill:url(#_Linear1);fill-rule:nonzero;" />
           <defs>
