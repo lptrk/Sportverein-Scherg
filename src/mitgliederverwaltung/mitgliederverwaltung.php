@@ -51,14 +51,14 @@ echo $name;
     <button class="mitglied-hinzufuegen">
       <a class="hinzufuegen-button" onclick="openAddModal()">+ Mitglied hinzufügen</a>
     </button>
-    <input type="text" class="Freitextsuche" placeholder="Freitextsuche">
+    <input type="text" class="Freitextsuche" placeholder="Freitextsuche" id="Freitextsuche" onkeyup="lookForEntry()">
   </div>
   <section class="strich"></section>
   <div class="bottom-bar">
     <section class="bottom-text">Sportverein © 2022</section>
   </div>
   <div class="table-div">
-    <table class="styled-table">
+    <table class="styled-table" id="myTable">
       <thead>
         <tr>
           <th>Vorname</th>
