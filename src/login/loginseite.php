@@ -11,10 +11,10 @@
     $test->hashPassword($name, $password);*/
 
     //Nur Zum testen
-    if(isset($_SESSION["username"])){
-        echo "YESauhfwawhfoajwfaf";
-    }
-    var_dump($_POST);
+    /*if(isset($_SESSION["username"])){
+        echo $_SESSION["username"];
+        echo $_SESSION["userid"];
+    }*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
