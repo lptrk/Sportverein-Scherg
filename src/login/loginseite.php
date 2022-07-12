@@ -1,5 +1,10 @@
 <?php
     session_start();
+
+    if(isset($_SESSION["loggedin"])){
+      header("location: ../mitgliederverwaltung/mitgliederverwaltung.php?error=logged_in");
+    }
+
     //Hier nur mal eben einen Benutzer in die Datenbank geshitfixed (später code hier löschen?)
 
 /*    $name = 'Mustermann';
