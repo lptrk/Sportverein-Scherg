@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@200;300;400;500;600;700;800;900&display=swap");
 
+html,body{
+margin: 0;  filter: blur(0px);
+
+}
+
 .top-bar {
   position: absolute;
   width: 100%;
@@ -76,6 +81,9 @@
   font-family: "Heebo";
   margin-bottom: 30px;
 }
+.mitglied-hinzufuegen:hover{
+  cursor: pointer;
+}
 
 .Freitextsuche {
   box-sizing: border-box;
@@ -96,9 +104,10 @@
 }
 .styled-table {
   position: absolute;
+  display: block;
+  top: 2px;
   overflow-y: scroll;
-  height: 300px;
-  max-height: 468px !important;
+  height: 516px;
   top: 27%;
   left: 92px;
   border-collapse: collapse;
@@ -109,13 +118,17 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-.styled-table tbody{
+.styled-table {
+  display: block;
+  z-index: 0;
 }
 .styled-table thead tr {
+  position: fixed;
   background-color: #cc6969;
   color: #ffffff;
   text-align: left;
 }
+
 
 .styled-table th,
 .styled-table td {
@@ -150,6 +163,10 @@
   font-weight: bold;
   color: #cc6969;
 }
+.table-edit:hover{
+cursor: pointer;
+}
+
 .bottom-bar {
   position: absolute;
   box-sizing: content-box;
@@ -168,9 +185,12 @@
   color: white;
 }
 
-.edit-div {
+#add-div{
   display: none;
+}
 
+.edit-div {
+display: none;
   position: absolute;
   width: 862px;
   height: 505px;
@@ -181,6 +201,8 @@
   box-shadow: 1px 1px 5px 4px rgba(0, 0, 0, 0.25);
   border-radius: 15px;
   z-index: 3;
+
+
 }
 
 .edit-header {
@@ -403,6 +425,10 @@
   border-radius: 5px;
 }
 
+.add-text:hover{
+  cursor: pointer;
+}
+
 .add-text {
   height: 38px;
   position: relative;
@@ -425,4 +451,13 @@
 
 .add-member :hover{
   cursor: pointer;
+}
+
+.delete-message-div{
+  display: none;
+  width: 300px;
+  height: 250px;
+  position: absolute;
+  background-color: white;
+  border-radius: 15px;
 }

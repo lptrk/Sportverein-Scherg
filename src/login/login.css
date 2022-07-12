@@ -120,6 +120,10 @@ color: white;
 font-size: 16px;
 }
 
+.subimt:hover{
+    cursor: pointer;
+}
+
 .background-div{
     position: absolute;
 width: 50%;

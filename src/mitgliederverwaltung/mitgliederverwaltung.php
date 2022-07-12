@@ -23,27 +23,29 @@ echo $name;
   <title>Mitgliederverwaltung</title>
 </head>
 
-<body>
-  <div class="top-bar">
-    <section class="Nutzername">Name des Benutzers <a href="/login/login.html"></section>
-    <section class="logout"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
-        <path d="M14.08,15.59L16.67,13L7,13L7,11L16.67,11L14.08,8.41L15.5,7L20.5,12L15.5,17L14.08,15.59M19,3C20.097,3 21,3.903 21,5L21,9.67L19,7.67L19,5L5,5L5,19L19,19L19,16.33L21,14.33L21,19C21,20.097 20.097,21 19,21L5,21C3.89,21 3,20.1 3,19L3,5C3,3.89 3.89,3 5,3L19,3Z" style="fill:url(#_Linear1);fill-rule:nonzero;" />
-        <defs>
-          <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(18,0,0,18,3,12)">
-            <stop offset="0" style="stop-color:rgb(88,88,88);stop-opacity:1" />
-            <stop offset="0.47" style="stop-color:rgb(119,84,84);stop-opacity:1" />
-            <stop offset="1" style="stop-color:rgb(201,74,74);stop-opacity:1" />
-          </linearGradient>
-        </defs>
-      </svg>
-      </a></section>
-  </div>
+<body id="body">
+  <div class="container-div">
 
-  <div class="ueberschrift">MITGLIEDERVERWALTUNG</div>
-  <button class="mitglied-hinzufuegen">
-    <a class="hinzufuegen-button" href="">+ Mitglied hinzufügen</a>
-  </button>
-  <input type="text" class="Freitextsuche" placeholder="Freitextsuche">
+    <div class="top-bar">
+      <section class="Nutzername" id="nutzername">Name des Benutzers <a href="#"></section>
+      <section class="logout"><svg width="24" height="24" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;">
+          <path d="M14.08,15.59L16.67,13L7,13L7,11L16.67,11L14.08,8.41L15.5,7L20.5,12L15.5,17L14.08,15.59M19,3C20.097,3 21,3.903 21,5L21,9.67L19,7.67L19,5L5,5L5,19L19,19L19,16.33L21,14.33L21,19C21,20.097 20.097,21 19,21L5,21C3.89,21 3,20.1 3,19L3,5C3,3.89 3.89,3 5,3L19,3Z" style="fill:url(#_Linear1);fill-rule:nonzero;" />
+          <defs>
+            <linearGradient id="_Linear1" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(18,0,0,18,3,12)">
+              <stop offset="0" style="stop-color:rgb(88,88,88);stop-opacity:1" />
+              <stop offset="0.47" style="stop-color:rgb(119,84,84);stop-opacity:1" />
+              <stop offset="1" style="stop-color:rgb(201,74,74);stop-opacity:1" />
+            </linearGradient>
+          </defs>
+        </svg>
+        </a></section>
+    </div>
+
+    <div class="ueberschrift">MITGLIEDERVERWALTUNG</div>
+    <button class="mitglied-hinzufuegen">
+      <a class="hinzufuegen-button" onclick="openAddModal()">+ Mitglied hinzufügen</a>
+    </button>
+    <input type="text" class="Freitextsuche" placeholder="Freitextsuche">
   </div>
   <section class="strich"></section>
   <div class="bottom-bar">
@@ -72,31 +74,68 @@ echo $name;
           echo "<td>" . $row['ort'] . "</td>";
           echo "<td>" . $row['geschlecht'] . "</td>";
           echo "<td>" . $row['geschlecht'] . "</td>";
-          echo "<td> <a  onclick='showModal()'> " . $pencilIcon . "<a/> " . "<a>" . $deleteIcon . "<a/> </td>";
+          echo "<td> <a  class='table-edit' onclick='showModal()'> " . $pencilIcon . "<a/> " . "<a class='table-edit'>" . $deleteIcon . "<a/> </td>";
           echo "<tr>";
         }
         ?>
       <tfoot class="table-footer">
-        <td class="footer-row">Ergebnisse pro Seite
-        </td>
-        <td> <select name="" id="ergebnisse-pro-seite">
-            <option value="">10</option>
-          </select>
-        </td>
-        <td></td>
-        <td></td>
-        <td>Aktuelle Seite</td>
-        <td><select name="" id="">
-            <option value="">1</option>
-          </select></td>
+        <tr class="footer-row">
+          <td>Ergebnisse pro Seite
+          </td>
+          <td> <select name="" id="ergebnisse-pro-seite">
+              <option value="">10</option>
+            </select>
+          </td>
+          <td></td>
+          <td></td>
+          <td>Aktuelle Seite</td>
+          <td><select name="" id="">
+              <option value="">1</option>
+            </select></td>
+        </tr>
       </tfoot>
       </tbody>
     </table>
   </div>
+  </div>
+
 
   <!-- PopUp Windows -->
+
+  <!-- Fenster, in dem Mitglieder bearbeitet werden können -->
+
   <form action="">
     <div class="edit-div" id="edit-div">
+      <div class="edit-header">
+        MITGLIED BEARBEITEN
+      </div>
+      <section class="edit-underline"></section>
+      <label for="name" class="name-label">Vorname*</label>
+      <input type="text" id="name">
+      <label for="lastname" class="lastname-label">Nachname*</label>
+      <input type="text" id="lastname">
+      <label for="plz" class="plz-label">PLZ*</label>
+      <input type="text" id="plz">
+      <label for="ort" class="ort-label">Ort*</label>
+      <input type="text" id="ort">
+      <label for="geschlecht" class="geschlecht-label">Geschlecht*</label>
+      <select id="geschlecht">
+        <option value="male">Männlich</option>
+        <option value="female">Weiblich</option>
+      </select>
+      <label for="sportarten" class="sportarten-label">Sportarten*</label>
+      <select name="sportarten" id="sportarten">
+        <option value="">Sportart auswählen</option>
+      </select>
+      <div class="add-member">
+        <button type="button" class="add-text" onclick="closeModal()">BESTÄTIGEN</button>
+      </div>
+    </div>
+  </form>
+
+  <!-- Fenster, um Mitglieder hinzuzufügen -->
+  <form action="">
+    <div class="edit-div" id="add-div">
       <div class="edit-header">
         MITGLIED HINZUFÜGEN
       </div>
@@ -118,10 +157,17 @@ echo $name;
       <select name="sportarten" id="sportarten">
         <option value="">Sportart auswählen</option>
       </select>
-      <div class="add-member"><button class="add-text" onclick="closeModal()">HINZUFÜGEN</button></div> </a>
+      <div class="add-member">
+        <button type="button" class="add-text" onclick="closeAddModal()">HINZUFÜGEN</button>
+      </div>
     </div>
   </form>
 
+  <!-- Delete Warnung -->
+
+  <div class="delete-message-div">
+
+  </div>
 
   <script type="text/javascript" src="mitgliederverwaltung.js"></script>
 </body>
