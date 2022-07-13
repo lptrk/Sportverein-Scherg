@@ -22,7 +22,7 @@ if($_POST["action"] == "add_member"){
     //Zur Übersichtsseite
     header("location: ../login/loginseite.php?error=no_error");
 
-}else if($_POST["action" == "update_member"]){
+}else if($_POST["action"] == "update_member"){
     //Daten holen
     $name = $_POST["name"];
     $lastname = $_POST["lastname"];

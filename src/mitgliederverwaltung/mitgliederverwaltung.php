@@ -117,13 +117,13 @@ $sql = "SELECT * FROM mitglied AS mi JOIN mitglied_sportart AS ms ON mi.mi_id = 
       <input type="text" name="action" value="update_member" hidden>
       <section class="edit-underline"></section>
       <label for="name" class="name-label">Vorname*</label>
-      <input type="text" id="name" name="name">
+      <input type="text" id="name" name="name" required>
       <label for="lastname" class="lastname-label">Nachname*</label>
-      <input type="text" id="lastname" name="lastname">
+      <input type="text" id="lastname" name="lastname" required>
       <label for="plz" class="plz-label">PLZ*</label>
-      <input type="text" id="plz"name="plz">
+      <input type="text" id="plz"name="plz" required>
       <label for="ort" class="ort-label">Ort*</label>
-      <input type="text" id="ort" name="ort">
+      <input type="text" id="ort" name="ort" required>
       <label for="geschlecht" class="geschlecht-label">Geschlecht*</label>
       <select id="geschlecht" name="geschlecht">
         <option value="male">Männlich</option>
@@ -157,13 +157,13 @@ $sql = "SELECT * FROM mitglied AS mi JOIN mitglied_sportart AS ms ON mi.mi_id = 
       <input type="text" name="action" value="add_member" hidden>
       <section class="edit-underline"></section>
       <label for="name" class="name-label">Vorname*</label>
-      <input type="text" id="name"name="name">
+      <input type="text" id="name"name="name" required>
       <label for="lastname" class="lastname-label">Nachname*</label>
-      <input type="text" id="lastname"name="lastname">
+      <input type="text" id="lastname"name="lastname" required>
       <label for="plz" class="plz-label">PLZ*</label>
-      <input type="text" id="plz"name="plz">
+      <input type="text" id="plz"name="plz" required>
       <label for="ort" class="ort-label">Ort*</label>
-      <input type="text" id="ort"name="ort">
+      <input type="text" id="ort"name="ort" required>
       <label for="geschlecht" class="geschlecht-label">Geschlecht*</label>
       <select id="geschlecht"name="geschlecht">
         <option value="m">Männlich</option>

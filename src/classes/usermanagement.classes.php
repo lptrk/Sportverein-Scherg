@@ -6,15 +6,17 @@ class userManagement extends Dbh {
         $stmt = $this->connect()->prepare('INSERT INTO mitglied (vorname, nachname, plz, ort, geschlecht, or_id, gb_id) VALUES (?, ?, ?, ?, ?, ?, ?);');
         if(!$stmt->execute(array($name, $lastname, $plz, $ort, $gender, $sport, 1))) {
             $stmt = null;
-            header("location: ../login/loginseite.php?error=stmtfailed");
+            header("location: ../login/loginseite.php?error=stmtfailed_on_insert_member");
             exit();
     }
 }
+//$sql = "SELECT * FROM mitglied AS mi JOIN mitglied_sportart AS ms ON mi.mi_id = ms.mi_id JOIN sportart AS sp ON ms.sa_id = sp.sa_id";
+
     protected function updateMember($name, $lastname, $plz, $ort, $gender, $sport){
-        $stmt = $this->connect()->prepare('UPDATE mitglied SET vorname = ?, nachname = ?, plz = ?, ort = ?, geschlecht = ?, or_id = ? gb_id = ? WHERE vorname = ? AND nachname = ?;'); 
+        $stmt = $this->connect()->prepare('UPDATE mitglied SET vorname = ?, nachname = ?, plz = ?, ort = ?, geschlecht = ?, or_id = ?, gb_id = ? WHERE vorname = ? AND nachname = ?;'); 
         if(!$stmt->execute(array($name, $lastname, $plz, $ort, $gender, $sport, 1, $name, $lastname))) {
             $stmt = null;
-            header("location: ../login/loginseite.php?error=stmtfailed");
+            header("location: ../login/loginseite.php?error=stmtfailed_on_update_member");
             exit();
         }
     }
