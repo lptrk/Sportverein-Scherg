@@ -15,5 +15,5 @@ if(isset($_POST["submit"])){
     $login->loginUser();
 
     //Zur Hauptseite
-    header("location: ../mitgliederverwaltung/mitgliederverwaltung.php?error=none");
+    header("location: ../mitgliederverwaltung/mitgliederverwaltungsseite.php?error=none");
 }
