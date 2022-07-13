@@ -140,7 +140,7 @@ echo $name;
   </form>
 
   <!-- Fenster, um Mitglieder hinzuzufügen -->
-  <form action="">
+  <form action="../classes/.add.php" method="POST">
     <div class="edit-div" id="add-div">
       <div class="edit-header">
         MITGLIED HINZUFÜGEN
