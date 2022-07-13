@@ -1,38 +1,39 @@
 <?php
 
-class userManagementContr extends userManagement {
+class userManagementContr extends Dbh {
 
     private $name;
     private $lastname;
-    private $postcode;
-    private $location;
+    private $plz;
+    private $ort;
     private $gender;
-    private $sporttype;
+    private $sport;
 
-    public function __construct($name, $lastname, $postcode, $location, $gender, $sporttype) {
+    public function __construct($name, $lastname, $plz, $ort, $gender, $sport) {
         $this->name = $name;
         $this->lastname = $lastname;
-        $this->postcode = $postcode;
-        $this->location = $location;
+        $this->plz = $plz;
+        $this->ort = $ort;
         $this->gender = $gender;
-        $this->sporttype = $sporttype;
+        $this->sport = $sport;
     }
 
-    public function addMember() {
-        $this->insertMember($this->name, $this->lastname, $this->postcode, $this->location, $this->gender, $this->sporttype);
-    }
 
-    public function setMember() {
-        $this->updateMember($this->name, $this->lastname, $this->postcode, $this->location, $this->gender, $this->sporttype);
+    public function insertMember(){
+        $stmt = $this->connect()->prepare('INSERT INTO mitglied (vorname, nachname, plz, ort, geschlecht, or_id, gb_id) VALUES (?, ?, ?, ?, ?, ?, ?);');
+        if(!$stmt->execute(array($this->name, $this->lastname, $this->plz, $this->ort, $this->gender, $this->sport, 1))) {
+            $stmt = null;
+            header("location: ../login/loginseite.php?error=stmtfailed_on_insert_member");
+            exit();
     }
+}
 
-    public function emptyInput(){
-        if(empty($this->name) || empty($this->password)) {
-            $result = false;
-        }else{
-            $result = true;
+    public function updateMember(){
+        $stmt = $this->connect()->prepare('UPDATE mitglied SET vorname = ?, nachname = ?, plz = ?, ort = ?, geschlecht = ?, or_id = ?, gb_id = ? WHERE vorname = ? AND nachname = ?;'); 
+        if(!$stmt->execute(array($this->name, $this->lastname, $this->plz, $this->ort, $this->gender, $this->sport, 1, $this->name, $this->lastname))) {
+            $stmt = null;
+            header("location: ../login/loginseite.php?error=stmtfailed_on_update_member");
+            exit();
         }
-        return $result;
     }
-
 }

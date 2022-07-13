@@ -1,6 +1,5 @@
 <?php
 include "../classes/dbh.classes.php";
-include "../classes/usermanagement.classes.php";
 include "../classes/usermanagement-contr.classes.php";
 
 if($_POST["action"] == "add_member"){
@@ -17,7 +16,7 @@ if($_POST["action"] == "add_member"){
     $userManagement = new userManagementContr($name, $lastname, $plz, $ort, $gender, $sport);
 
     //Funktionen
-    $userManagement->addMember();
+    $userManagement->insertMember();
 
     //Zur Übersichtsseite
     header("location: ../login/loginseite.php?error=no_error");
@@ -35,7 +34,7 @@ if($_POST["action"] == "add_member"){
     $userManagement = new userManagementContr($name, $lastname, $plz, $ort, $gender, $sport);
 
     //Funktionen
-    $userManagement->setMember();
+    $userManagement->updateMember();
 
     //Zur Übersichtsseite
     header("location: ../login/loginseite.php?error=no_error");
