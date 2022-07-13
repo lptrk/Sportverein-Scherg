@@ -11,6 +11,7 @@ if(isset($_POST["addMember"])){
     $sporttype = $_POST["sportarten"];
 
     //userManagementContr instanziieren
+    include "../classes/dbh.classes.php";
     include "../classes/usermanagement.classes.php";
     include "../classes/usermanagement-contr.classes.php";
     $userManagement = new userManagementContr($name, $lastname, $postcode, $location, $gender, $sporttype);
