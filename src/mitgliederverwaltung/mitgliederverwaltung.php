@@ -160,8 +160,17 @@ echo $name;
         <option value="female">Weiblich</option>
       </select>
       <label for="sportarten" class="sportarten-label">Sportarten*</label>
-      <select ^="sportarten" id="sportarten">
-        <option value="">Sportart auswählen</option>
+      <select name="sportarten" id="sportarten">
+      <option value="0">Sportart auswählen</option>
+      <option value="1">Fußball</option>
+      <option value="2">Handball</option>
+      <option value="3">Boxen</option>
+      <option value="4">Kraft Dreikampf</option>
+      <option value="5">Tennis</option>
+      <option value="6">Yoga</option>
+      <option value="7">Taekwondo</option>
+      <option value="8">Aerobic</option>
+      <option value="9">Dummy</option>
       </select>
       <div class="add-member">
         <button type="button" class="add-text" onclick="closeAddModal()">HINZUFÜGEN</button>
