@@ -1,20 +1,20 @@
 <?php
+include "../classes/dbh.classes.php";
+include "../classes/usermanagement.classes.php";
+include "../classes/usermanagement-contr.classes.php";
 
-if(isset($_POST["addMember"])){
+if($_POST["action"] == "add_member"){
 
     //Daten holen
     $name = $_POST["name"];
     $lastname = $_POST["lastname"];
-    $postcode = $_POST["plz"];
-    $location = $_POST["ort"];
+    $plz = $_POST["plz"];
+    $ort = $_POST["ort"];
     $gender = $_POST["geschlecht"];
-    $sporttype = $_POST["sportarten"];
+    $sport = $_POST["sportarten"];
 
     //userManagementContr instanziieren
-    include "../classes/dbh.classes.php";
-    include "../classes/usermanagement.classes.php";
-    include "../classes/usermanagement-contr.classes.php";
-    $userManagement = new userManagementContr($name, $lastname, $postcode, $location, $gender, $sporttype);
+    $userManagement = new userManagementContr($name, $lastname, $plz, $ort, $gender, $sport);
 
     //Funktionen
     $userManagement->addMember();
@@ -22,4 +22,21 @@ if(isset($_POST["addMember"])){
     //Zur Übersichtsseite
     header("location: ../login/loginseite.php?error=no_error");
 
+}else if($_POST["action" == "update_member"]){
+    //Daten holen
+    $name = $_POST["name"];
+    $lastname = $_POST["lastname"];
+    $plz = $_POST["plz"];
+    $ort = $_POST["ort"];
+    $gender = $_POST["geschlecht"];
+    $sport = $_POST["sportarten"];   
+   
+    //userManagementContr instanziieren
+    $userManagement = new userManagementContr($name, $lastname, $plz, $ort, $gender, $sport);
+
+    //Funktionen
+    $userManagement->setMember();
+
+    //Zur Übersichtsseite
+    header("location: ../login/loginseite.php?error=no_error");
 }

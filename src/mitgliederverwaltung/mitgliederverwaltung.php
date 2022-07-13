@@ -109,11 +109,12 @@ $sql = "SELECT * FROM mitglied AS mi JOIN mitglied_sportart AS ms ON mi.mi_id = 
 
   <!-- Fenster, in dem Mitglieder bearbeitet werden können -->
 
-  <form action="">
+  <form action="mitgliederverwaltung.php" method="POST">
     <div class="edit-div" id="edit-div">
       <div class="edit-header">
         MITGLIED BEARBEITEN
       </div>
+      <input type="text" name="action" value="update_member" hidden>
       <section class="edit-underline"></section>
       <label for="name" class="name-label">Vorname*</label>
       <input type="text" id="name" name="name">
@@ -142,7 +143,7 @@ $sql = "SELECT * FROM mitglied AS mi JOIN mitglied_sportart AS ms ON mi.mi_id = 
       <option value="9">Dummy</option>
       </select>
       <div class="add-member">
-        <button type="button" class="add-text" onclick="closeModal()">BESTÄTIGEN</button>
+        <button type="submit" class="add-text" onclick="closeModal()">BESTÄTIGEN</button>
       </div>
     </div>
   </form>
@@ -153,6 +154,7 @@ $sql = "SELECT * FROM mitglied AS mi JOIN mitglied_sportart AS ms ON mi.mi_id = 
       <div class="edit-header">
         MITGLIED HINZUFÜGEN
       </div>
+      <input type="text" name="action" value="add_member" hidden>
       <section class="edit-underline"></section>
       <label for="name" class="name-label">Vorname*</label>
       <input type="text" id="name"name="name">
@@ -164,8 +166,8 @@ $sql = "SELECT * FROM mitglied AS mi JOIN mitglied_sportart AS ms ON mi.mi_id = 
       <input type="text" id="ort"name="ort">
       <label for="geschlecht" class="geschlecht-label">Geschlecht*</label>
       <select id="geschlecht"name="geschlecht">
-        <option value="male">Männlich</option>
-        <option value="female">Weiblich</option>
+        <option value="m">Männlich</option>
+        <option value="w">Weiblich</option>
       </select>
       <label for="sportarten" class="sportarten-label">Sportarten*</label>
       <select name="sportarten" id="sportarten"name="sportarten">

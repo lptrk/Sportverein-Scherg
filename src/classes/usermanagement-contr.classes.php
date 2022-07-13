@@ -19,12 +19,11 @@ class userManagementContr extends userManagement {
     }
 
     public function addMember() {
-        if($this->emptyInput() == false) {
-            header("location: ../mitgliederverwaltung/mitgliederverwaltung.php?error=emptyinput");
-            exit();
-        }
+        $this->insertMember($this->name, $this->lastname, $this->postcode, $this->location, $this->gender, $this->sporttype);
+    }
 
-        $this->insertMember($this->name,$this->lastname,$this->postcode,$this->location,$this->gender,$this->sporttype);
+    public function setMember() {
+        $this->updateMember($this->name, $this->lastname, $this->postcode, $this->location, $this->gender, $this->sporttype);
     }
 
     public function emptyInput(){
