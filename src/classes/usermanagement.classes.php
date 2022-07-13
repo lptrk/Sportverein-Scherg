@@ -4,7 +4,7 @@ class userManagement extends Dbh {
 
     protected function insertMember($name, $lastname, $plz, $ort, $geschlecht, $sportarten){
         $stmt = $this->connect()->prepare('INSERT INTO mitglied (vorname, nachname, plz, ort, geschlecht, gb_id) VALUES (?, ?, ?, ?, ?, ?);');
-        if(!$stmt->execute(array($name, $lastname, $plz, $ort, $geschlecht, $sportarten))) { //ToDo
+        if(!$stmt->execute(array($name, $lastname, $plz, $ort, $geschlecht, $sportarten))) {
             $stmt = null;
             header("location: ../login/loginseite.php?error=stmtfailed");
             exit();
