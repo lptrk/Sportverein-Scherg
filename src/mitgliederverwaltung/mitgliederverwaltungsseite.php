@@ -15,8 +15,8 @@ if(isset($_POST["addMember"])){
     include "../classes/usermanagement-contr.classes.php";
     $userManagement = new userManagementContr($name, $lastname, $postcode, $location, $gender, $sporttype);
 
-    //error Handlers
-
+    //Funktionen
+    $userManagement->addMember();
 
     //Zur Übersichtsseite
 

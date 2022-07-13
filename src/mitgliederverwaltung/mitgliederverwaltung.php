@@ -149,7 +149,7 @@ echo $name;
   </form>
 
   <!-- Fenster, um Mitglieder hinzuzufügen -->
-  <form action="../classes/.add.php" method="POST">
+  <form action="mitgliederverwaltungsseite.php" method="POST">
     <div class="edit-div" id="add-div">
       <div class="edit-header">
         MITGLIED HINZUFÜGEN
@@ -182,7 +182,7 @@ echo $name;
       <option value="9">Dummy</option>
       </select>
       <div class="add-member">
-        <button type="button" class="add-text" onclick="closeAddModal()">HINZUFÜGEN</button>
+        <button type="submit" class="add-text" onclick="closeAddModal()">HINZUFÜGEN</button>
       </div>
     </div>
   </form>

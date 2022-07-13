@@ -18,13 +18,13 @@ class userManagementContr extends userManagement {
         $this->sporttype = $sporttype;
     }
 
-    public function loginUser() {
+    public function addMember() {
         if($this->emptyInput() == false) {
-            header("location: ../login/loginseite.php?error=emptyinput");
+            header("location: ../mitgliederverwaltung/mitgliederverwaltung.php?error=emptyinput");
             exit();
         }
 
-        $this->getUser($this->name, $this->password);
+        $this->insertMember($this->name,$this->lastname,$this->postcode,$this->location,$this->gender,$this->sporttype);
     }
 
     public function emptyInput(){
