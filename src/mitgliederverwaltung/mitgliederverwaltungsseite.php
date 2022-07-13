@@ -20,6 +20,6 @@ if(isset($_POST["addMember"])){
     $userManagement->addMember();
 
     //Zur Übersichtsseite
-
+    header("location: ../login/loginseite.php?error=no_error");
 
 }
