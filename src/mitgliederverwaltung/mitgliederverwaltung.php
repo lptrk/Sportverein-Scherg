@@ -117,21 +117,30 @@ echo $name;
       </div>
       <section class="edit-underline"></section>
       <label for="name" class="name-label">Vorname*</label>
-      <input type="text" id="name">
+      <input type="text" id="name" name="name">
       <label for="lastname" class="lastname-label">Nachname*</label>
-      <input type="text" id="lastname">
+      <input type="text" id="lastname" name="lastname">
       <label for="plz" class="plz-label">PLZ*</label>
-      <input type="text" id="plz">
+      <input type="text" id="plz"name="plz">
       <label for="ort" class="ort-label">Ort*</label>
-      <input type="text" id="ort">
+      <input type="text" id="ort" name="ort">
       <label for="geschlecht" class="geschlecht-label">Geschlecht*</label>
-      <select id="geschlecht">
+      <select id="geschlecht" name="geschlecht">
         <option value="male">Männlich</option>
         <option value="female">Weiblich</option>
       </select>
       <label for="sportarten" class="sportarten-label">Sportarten*</label>
-      <select name="sportarten" id="sportarten">
-        <option value="">Sportart auswählen</option>
+      <select name="sportarten" id="sportarten"name="sportarten">
+        <option value="0">Sportart auswählen</option>
+      <option value="1">Fußball</option>
+      <option value="2">Handball</option>
+      <option value="3">Boxen</option>
+      <option value="4">Kraft Dreikampf</option>
+      <option value="5">Tennis</option>
+      <option value="6">Yoga</option>
+      <option value="7">Taekwondo</option>
+      <option value="8">Aerobic</option>
+      <option value="9">Dummy</option>
       </select>
       <div class="add-member">
         <button type="button" class="add-text" onclick="closeModal()">BESTÄTIGEN</button>
@@ -147,20 +156,20 @@ echo $name;
       </div>
       <section class="edit-underline"></section>
       <label for="name" class="name-label">Vorname*</label>
-      <input type="text" id="name">
+      <input type="text" id="name"name="name">
       <label for="lastname" class="lastname-label">Nachname*</label>
-      <input type="text" id="lastname">
+      <input type="text" id="lastname"name="lastname">
       <label for="plz" class="plz-label">PLZ*</label>
-      <input type="text" id="plz">
+      <input type="text" id="plz"name="plz">
       <label for="ort" class="ort-label">Ort*</label>
-      <input type="text" id="ort">
+      <input type="text" id="ort"name="ort">
       <label for="geschlecht" class="geschlecht-label">Geschlecht*</label>
-      <select id="geschlecht">
+      <select id="geschlecht"name="geschlecht">
         <option value="male">Männlich</option>
         <option value="female">Weiblich</option>
       </select>
       <label for="sportarten" class="sportarten-label">Sportarten*</label>
-      <select name="sportarten" id="sportarten">
+      <select name="sportarten" id="sportarten"name="sportarten">
       <option value="0">Sportart auswählen</option>
       <option value="1">Fußball</option>
       <option value="2">Handball</option>
